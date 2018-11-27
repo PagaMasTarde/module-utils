@@ -1,9 +1,9 @@
 # Module Utils <img src="https://pagamastarde.com/img/icons/logo.svg" width="100" align="right">
 
-[![Build Status](https://travis-ci.org/PagaMasTarde/selenium-form-utils.svg?branch=master)](https://travis-ci.org/PagaMasTarde/selenium-form-utils)
-[![Latest Stable Version](https://poser.pugx.org/pagamastarde/selenium-form-utils/v/stable)](https://packagist.org/packages/pagamastarde/selenium-form-utils)
-[![composer.lock](https://poser.pugx.org/pagamastarde/selenium-form-utils/composerlock)](https://packagist.org/packages/pagamastarde/selenium-form-utils)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/PagaMasTarde/selenium-form-utils/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/PagaMasTarde/selenium-form-utils/?branch=master)
+[![Build Status](https://travis-ci.org/PagaMasTarde/module-utils.svg?branch=master)](https://travis-ci.org/PagaMasTarde/module-utils)
+[![Latest Stable Version](https://poser.pugx.org/pagamastarde/module-utils/v/stable)](https://packagist.org/packages/pagamastarde/module-utils)
+[![composer.lock](https://poser.pugx.org/pagamastarde/module-utils/composerlock)](https://packagist.org/packages/pagamastarde/module-utils)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/PagaMasTarde/module-utils/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/PagaMasTarde/module-utils/?branch=master)
 
 // ADD LIBRARY DESCRIPTION
 
@@ -29,9 +29,7 @@ the ordersApiClient will also available.
 
 ```php
 
-// Once the webDriver of selenium is inside Paga+Tarde form, basically:
-// $webdriver->getCurrentUrl == 'form.pagamastarde.com/....'
-// Then you can use this tool to finish the form:
+// Instructions 
 
 //ADD HOW TO INVOKE
 
