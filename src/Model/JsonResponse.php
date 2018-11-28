@@ -20,7 +20,7 @@ class JsonResponse
     protected $result;
 
     /**
-     * @var string $status
+     * @var int $status
      */
     protected $status;
 
@@ -35,6 +35,18 @@ class JsonResponse
     public function toJson()
     {
         return json_encode($this, JSON_UNESCAPED_SLASHES|JSON_PRETTY_PRINT);
+    }
+
+    /**
+     *
+     */
+    public function printResponse()
+    {
+        header("HTTP/1.1 ".$this->getStatus(), true, $this->getStatus());
+        header('Content-Type: application/json', true);
+        header('Content-Length: ' . strlen($this->toJson()));
+        echo ($this->toJson());
+        exit();
     }
 
     /**
@@ -83,5 +95,21 @@ class JsonResponse
     public function setResult($result)
     {
         $this->result = $result;
+    }
+
+    /**
+     * @return int
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * @param int $status
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
     }
 }
