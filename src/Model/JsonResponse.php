@@ -2,7 +2,9 @@
 
 namespace PagaMasTarde\ModuleUtils\Model;
 
-class JsonResponse
+use Nayjest\StrCaseConverter\Str;
+
+class JsonResponse implements \JsonSerializable
 {
     /**
      * @var int $timestamp
@@ -10,20 +12,28 @@ class JsonResponse
     protected $timestamp;
 
     /**
-     * @var string $order_id
+     * @var string $merchantOrderId
      */
-    protected $order_id;
+    protected $merchantOrderId;
+
+    /**
+     * @var string $pmtOrderId
+     */
+    protected $pmtOrderId;
 
     /**
      * @var string $result
      */
-    protected $result;
+    protected $result = 'Order confirmed';
 
     /**
      * @var int $status
      */
-    protected $status;
+    protected $statusCode = 200;
 
+    /**
+     * JsonResponse constructor.
+     */
     public function __construct()
     {
         $this->timestamp = time();
@@ -34,15 +44,31 @@ class JsonResponse
      */
     public function toJson()
     {
-        return json_encode($this, JSON_UNESCAPED_SLASHES|JSON_PRETTY_PRINT);
+        $response = $this->jsonSerialize();
+
+        return json_encode($response, JSON_UNESCAPED_SLASHES|JSON_PRETTY_PRINT);
     }
 
     /**
-     *
+     * @return array
+     */
+    public function jsonSerialize()
+    {
+        $arrayProperties = array();
+
+        foreach ($this as $key => $value) {
+            $arrayProperties[Str::toSnakeCase($key)] = $value;
+        }
+
+        return $arrayProperties;
+    }
+
+    /**
+     * Post response
      */
     public function printResponse()
     {
-        header("HTTP/1.1 ".$this->getStatus(), true, $this->getStatus());
+        header("HTTP/1.1 ".$this->getStatusCode(), true, $this->getStatusCode());
         header('Content-Type: application/json', true);
         header('Content-Length: ' . strlen($this->toJson()));
         echo ($this->toJson());
@@ -50,7 +76,11 @@ class JsonResponse
     }
 
     /**
-     * @return mixed
+     * GETTERS Y SETTERS
+     */
+
+    /**
+     * @return int
      */
     public function getTimestamp()
     {
@@ -58,7 +88,7 @@ class JsonResponse
     }
 
     /**
-     * @param mixed $timestamp
+     * @param int $timestamp
      */
     public function setTimestamp($timestamp)
     {
@@ -66,23 +96,39 @@ class JsonResponse
     }
 
     /**
-     * @return mixed
+     * @return string
      */
-    public function getOrderId()
+    public function getMerchantOrderId()
     {
-        return $this->order_id;
+        return $this->merchantOrderId;
     }
 
     /**
-     * @param mixed $order_id
+     * @param string $merchantOrderId
      */
-    public function setOrderId($order_id)
+    public function setMerchantOrderId($merchantOrderId)
     {
-        $this->order_id = $order_id;
+        $this->merchantOrderId = $merchantOrderId;
     }
 
     /**
-     * @return mixed
+     * @return string
+     */
+    public function getPmtOrderId()
+    {
+        return $this->pmtOrderId;
+    }
+
+    /**
+     * @param string $pmtOrderId
+     */
+    public function setPmtOrderId($pmtOrderId)
+    {
+        $this->pmtOrderId = $pmtOrderId;
+    }
+
+    /**
+     * @return string
      */
     public function getResult()
     {
@@ -90,7 +136,7 @@ class JsonResponse
     }
 
     /**
-     * @param mixed $result
+     * @param string $result
      */
     public function setResult($result)
     {
@@ -100,16 +146,16 @@ class JsonResponse
     /**
      * @return int
      */
-    public function getStatus()
+    public function getStatusCode()
     {
-        return $this->status;
+        return $this->statusCode;
     }
 
     /**
-     * @param int $status
+     * @param int $statusCode
      */
-    public function setStatus($status)
+    public function setStatusCode($statusCode)
     {
-        $this->status = $status;
+        $this->statusCode = $statusCode;
     }
 }

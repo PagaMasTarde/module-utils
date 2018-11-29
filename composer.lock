@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3136d76a22935c87b5d8760755d85d6a",
+    "content-hash": "6201903cdb7d7c38f791ce3a1c20cc14",
     "packages": [],
     "packages-dev": [
         {
@@ -120,6 +120,95 @@
                 "webdriver"
             ],
             "time": "2018-05-16T17:37:13+00:00"
+        },
+        {
+            "name": "fzaninotto/faker",
+            "version": "v1.8.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fzaninotto/Faker.git",
+                "reference": "f72816b43e74063c8b10357394b6bba8cb1c10de"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/f72816b43e74063c8b10357394b6bba8cb1c10de",
+                "reference": "f72816b43e74063c8b10357394b6bba8cb1c10de",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.3.3 || ^7.0"
+            },
+            "require-dev": {
+                "ext-intl": "*",
+                "phpunit/phpunit": "^4.8.35 || ^5.7",
+                "squizlabs/php_codesniffer": "^1.5"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.8-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Faker\\": "src/Faker/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "François Zaninotto"
+                }
+            ],
+            "description": "Faker is a PHP library that generates fake data for you.",
+            "keywords": [
+                "data",
+                "faker",
+                "fixtures"
+            ],
+            "time": "2018-07-12T10:23:15+00:00"
+        },
+        {
+            "name": "nayjest/str-case-converter",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Nayjest/StrCaseConverter.git",
+                "reference": "e30f16afec3ed83e12369555e264263c23cf68bb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Nayjest/StrCaseConverter/zipball/e30f16afec3ed83e12369555e264263c23cf68bb",
+                "reference": "e30f16afec3ed83e12369555e264263c23cf68bb",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.*"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Vitalii Stepanenko",
+                    "email": "mail@vitaliy.in"
+                }
+            ],
+            "description": "Library for converting strings from camel case to snake case and vice versa.",
+            "time": "2015-06-04T13:11:29+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",
