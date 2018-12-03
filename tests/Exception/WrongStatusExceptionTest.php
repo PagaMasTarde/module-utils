@@ -15,18 +15,13 @@ class WrongStatusException extends AbstractException
     const ERROR_MESSAGE = 'Order status is not authorized. Current status: %s';
 
     /**
-     * ERROR_CODE
-     */
-    const ERROR_CODE = 403;
-
-    /**
      * WrongStatusException constructor.
      *
      * @param $currentStatus
      */
     public function __construct($currentStatus)
     {
-        $this->code = self::ERROR_CODE;
+        $this->code = 403;
         $this->message = sprintf(self::ERROR_MESSAGE, $currentStatus);
 
         return parent::__construct($this->getMessage(), $this->getCode());

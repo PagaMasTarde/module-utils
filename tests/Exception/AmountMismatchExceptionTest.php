@@ -15,11 +15,6 @@ class AmountMismatchException extends AbstractException
     const ERROR_MESSAGE = 'Amout mismatch error, expected %s and received %s';
 
     /**
-     * ERROR_CODE
-     */
-    const ERROR_CODE = 409;
-
-    /**
      * AmountMismatchException constructor.
      *
      * @param $expectedAmount
@@ -27,7 +22,7 @@ class AmountMismatchException extends AbstractException
      */
     public function __construct($expectedAmount, $currentAmount)
     {
-        $this->code = self::ERROR_CODE;
+        $this->code = 409;
         $this->message = sprintf(self::ERROR_MESSAGE, $expectedAmount, $currentAmount);
 
         return parent::__construct($this->getMessage(), $this->getCode());

@@ -15,11 +15,16 @@ class AlreadyProcessedException extends AbstractException
     const ERROR_MESSAGE = 'Cart already processed';
 
     /**
+     * ERROR_CODE
+     */
+    const ERROR_CODE = 200;
+
+    /**
      * AlreadyProcessedException constructor.
      */
     public function __construct()
     {
-        $this->code = 200;
+        $this->code = self::ERROR_CODE;
         $this->message = self::ERROR_MESSAGE;
 
         return parent::__construct($this->getMessage(), $this->getCode());

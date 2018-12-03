@@ -15,18 +15,13 @@ class UnknownException extends AbstractException
     const ERROR_MESSAGE = 'Unknown Exception: %s';
 
     /**
-     * ERROR_CODE
-     */
-    const ERROR_CODE = 500;
-
-    /**
      * UnknownException constructor.
      *
      * @param $message
      */
     public function __construct($message)
     {
-        $this->code = self::ERROR_CODE;
+        $this->code = 500;
         $this->message = sprintf(self::ERROR_MESSAGE, $message);
 
         return parent::__construct($this->getMessage(), $this->getCode());

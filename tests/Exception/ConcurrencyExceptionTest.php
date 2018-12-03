@@ -3,28 +3,23 @@
 namespace PagaMasTarde\ModuleUtils\Exception;
 
 /**
- * Class NoQuoteFoundException
+ * Class ConcurrencyException
  *
  * @package PagaMasTarde\ModuleUtils\Exception
  */
-class NoQuoteFoundException extends AbstractException
+class ConcurrencyException extends AbstractException
 {
     /**
      * ERROR_MESSAGE
      */
-    const ERROR_MESSAGE = 'No quote found';
+    const ERROR_MESSAGE = 'Validation in progress, try again later';
 
     /**
-     * ERROR_CODE
-     */
-    const ERROR_CODE = 429;
-
-    /**
-     * NoQuoteFoundException constructor.
+     * ConcurrencyException constructor.
      */
     public function __construct()
     {
-        $this->code = self::ERROR_CODE;
+        $this->code = 429;
         $this->message = self::ERROR_MESSAGE;
 
         return parent::__construct($this->getMessage(), $this->getCode());

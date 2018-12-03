@@ -15,11 +15,16 @@ class ConcurrencyException extends AbstractException
     const ERROR_MESSAGE = 'Validation in progress, try again later';
 
     /**
+     * ERROR_CODE
+     */
+    const ERROR_CODE = 429;
+
+    /**
      * ConcurrencyException constructor.
      */
     public function __construct()
     {
-        $this->code = 429;
+        $this->code = self::ERROR_CODE;
         $this->message = self::ERROR_MESSAGE;
 
         return parent::__construct($this->getMessage(), $this->getCode());

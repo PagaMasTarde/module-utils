@@ -3,28 +3,23 @@
 namespace PagaMasTarde\ModuleUtils\Exception;
 
 /**
- * Class NoQuoteFoundException
+ * Class NoIdentificationException
  *
  * @package PagaMasTarde\ModuleUtils\Exception
  */
-class NoQuoteFoundException extends AbstractException
+class NoIdentificationException extends AbstractException
 {
     /**
      * ERROR_MESSAGE
      */
-    const ERROR_MESSAGE = 'No quote found';
+    const ERROR_MESSAGE = 'We can not get the PagaMasTarde identification in database';
 
     /**
-     * ERROR_CODE
-     */
-    const ERROR_CODE = 429;
-
-    /**
-     * NoQuoteFoundException constructor.
+     * NoIdentificationException constructor.
      */
     public function __construct()
     {
-        $this->code = self::ERROR_CODE;
+        $this->code = 404;
         $this->message = self::ERROR_MESSAGE;
 
         return parent::__construct($this->getMessage(), $this->getCode());

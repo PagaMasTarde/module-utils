@@ -15,16 +15,11 @@ class NoQuoteFoundException extends AbstractException
     const ERROR_MESSAGE = 'No quote found';
 
     /**
-     * ERROR_CODE
-     */
-    const ERROR_CODE = 429;
-
-    /**
      * NoQuoteFoundException constructor.
      */
     public function __construct()
     {
-        $this->code = self::ERROR_CODE;
+        $this->code = 429;
         $this->message = self::ERROR_MESSAGE;
 
         return parent::__construct($this->getMessage(), $this->getCode());
