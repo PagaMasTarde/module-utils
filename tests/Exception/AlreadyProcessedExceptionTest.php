@@ -1,13 +1,15 @@
 <?php
 
-namespace PagaMasTarde\ModuleUtils\Exception;
+namespace Tests\PagaMasTarde\ModuleUtils;
+
+use PagaMasTarde\ModuleUtils\Exception\AlreadyProcessedException;
 
 /**
  * Class AlreadyProcessedException
  *
  * @package PagaMasTarde\ModuleUtils\Exception
  */
-class AlreadyProcessedException extends AbstractException
+class AlreadyProcessedExceptionTest extends AbstractExceptionTest
 {
     /**
      * ERROR_MESSAGE
@@ -15,13 +17,26 @@ class AlreadyProcessedException extends AbstractException
     const ERROR_MESSAGE = 'Cart already processed';
 
     /**
-     * AlreadyProcessedException constructor.
+     * ERROR_CODE
      */
-    public function __construct()
-    {
-        $this->code = 200;
-        $this->message = self::ERROR_MESSAGE;
+    const ERROR_CODE = 200;
 
-        return parent::__construct($this->getMessage(), $this->getCode());
+    /**
+     * testConstructor
+     */
+    public function testConstructor()
+    {
+        $exception = new AlreadyProcessedException();
+        $this->assertEquals(self::ERROR_MESSAGE, $exception->getMessage());
+        $this->assertEquals(self::ERROR_CODE, $exception->getCode());
+    }
+
+    /**
+     * testConstant
+     */
+    public function testConstant()
+    {
+        $this->assertEquals(self::ERROR_MESSAGE, AlreadyProcessedException::ERROR_MESSAGE);
+        $this->assertEquals(self::ERROR_CODE, AlreadyProcessedException::ERROR_CODE);
     }
 }

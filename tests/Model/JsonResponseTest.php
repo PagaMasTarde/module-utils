@@ -1,8 +1,10 @@
 <?php
 
-namespace PagaMasTarde\ModuleUtils\Model;
+namespace Tests\PagaMasTarde\ModuleUtils;
 
-class JsonExceptionResponseTest
+use PHPUnit\Framework\TestCase;
+
+abstract class JsonResponseTest extends TestCase
 {
 
 }

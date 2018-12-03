@@ -1,27 +1,41 @@
 <?php
 
-namespace PagaMasTarde\ModuleUtils\Exception;
+namespace Tests\PagaMasTarde\ModuleUtils;
+
+use PagaMasTarde\ModuleUtils\Exception\ConcurrencyException;
 
 /**
  * Class ConcurrencyException
  *
  * @package PagaMasTarde\ModuleUtils\Exception
  */
-class ConcurrencyException extends AbstractException
+class ConcurrencyExceptionTest extends AbstractExceptionTest
 {
     /**
      * ERROR_MESSAGE
      */
     const ERROR_MESSAGE = 'Validation in progress, try again later';
+    /**
+     * ERROR_CODE
+     */
+    const ERROR_CODE = 429;
 
     /**
-     * ConcurrencyException constructor.
+     * testConstructor
      */
-    public function __construct()
+    public function testConstructor()
     {
-        $this->code = 429;
-        $this->message = self::ERROR_MESSAGE;
+        $exception = new ConcurrencyException();
+        $this->assertEquals(self::ERROR_MESSAGE, $exception->getMessage());
+        $this->assertEquals(self::ERROR_CODE, $exception->getCode());
+    }
 
-        return parent::__construct($this->getMessage(), $this->getCode());
+    /**
+     * testConstant
+     */
+    public function testConstant()
+    {
+        $this->assertEquals(self::ERROR_MESSAGE, ConcurrencyException::ERROR_MESSAGE);
+        $this->assertEquals(self::ERROR_CODE, ConcurrencyException::ERROR_CODE);
     }
 }

@@ -1,13 +1,15 @@
 <?php
 
-namespace PagaMasTarde\ModuleUtils\Exception;
+namespace Tests\PagaMasTarde\ModuleUtils;
+
+use PagaMasTarde\ModuleUtils\Exception\UnknownException;
 
 /**
  * Class UnknownException
  *
  * @package PagaMasTarde\ModuleUtils\Exception
  */
-class UnknownException extends AbstractException
+class UnknownExceptionTest extends AbstractExceptionTest
 {
     /**
      * ERROR_MESSAGE
@@ -15,15 +17,32 @@ class UnknownException extends AbstractException
     const ERROR_MESSAGE = 'Unknown Exception: %s';
 
     /**
-     * UnknownException constructor.
-     *
-     * @param $message
+     * ERROR_CODE
      */
-    public function __construct($message)
-    {
-        $this->code = 500;
-        $this->message = sprintf(self::ERROR_MESSAGE, $message);
+    const ERROR_CODE = 500;
 
-        return parent::__construct($this->getMessage(), $this->getCode());
+    /**
+     * ERROR_DESCRIPTION
+     */
+    const ERROR_DESCRIPTION = 'Random message';
+
+    /**
+     * testConstructor
+     */
+    public function testConstructor()
+    {
+        $exception = new UnknownException(self::ERROR_DESCRIPTION);
+        $message = sprintf(self::ERROR_MESSAGE, self::ERROR_DESCRIPTION);
+        $this->assertEquals($message, $exception->getMessage());
+        $this->assertEquals(self::ERROR_CODE, $exception->getCode());
+    }
+
+    /**
+     * testConstant
+     */
+    public function testConstant()
+    {
+        $this->assertEquals(self::ERROR_MESSAGE, UnknownException::ERROR_MESSAGE);
+        $this->assertEquals(self::ERROR_CODE, UnknownException::ERROR_CODE);
     }
 }

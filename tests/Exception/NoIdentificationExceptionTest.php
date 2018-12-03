@@ -1,13 +1,15 @@
 <?php
 
-namespace PagaMasTarde\ModuleUtils\Exception;
+namespace Tests\PagaMasTarde\ModuleUtils;
+
+use PagaMasTarde\ModuleUtils\Exception\NoIdentificationException;
 
 /**
  * Class NoIdentificationException
  *
  * @package PagaMasTarde\ModuleUtils\Exception
  */
-class NoIdentificationException extends AbstractException
+class NoIdentificationExceptionTest extends AbstractExceptionTest
 {
     /**
      * ERROR_MESSAGE
@@ -15,13 +17,26 @@ class NoIdentificationException extends AbstractException
     const ERROR_MESSAGE = 'We can not get the PagaMasTarde identification in database';
 
     /**
-     * NoIdentificationException constructor.
+     * ERROR_CODE
      */
-    public function __construct()
-    {
-        $this->code = 404;
-        $this->message = self::ERROR_MESSAGE;
+    const ERROR_CODE = 404;
 
-        return parent::__construct($this->getMessage(), $this->getCode());
+    /**
+     * testConstructor
+     */
+    public function testConstructor()
+    {
+        $exception = new NoIdentificationException();
+        $this->assertEquals(self::ERROR_MESSAGE, $exception->getMessage());
+        $this->assertEquals(self::ERROR_CODE, $exception->getCode());
+    }
+
+    /**
+     * testConstant
+     */
+    public function testConstant()
+    {
+        $this->assertEquals(self::ERROR_MESSAGE, NoIdentificationException::ERROR_MESSAGE);
+        $this->assertEquals(self::ERROR_CODE, NoIdentificationException::ERROR_CODE);
     }
 }

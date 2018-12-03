@@ -1,12 +1,14 @@
 <?php
 
-namespace PagaMasTarde\ModuleUtils\Exception;
+namespace Tests\PagaMasTarde\ModuleUtils;
+
+use PHPUnit\Framework\TestCase;
 
 /**
- * Class AbstractStep
+ * Class AbstractExceptionTest
  *
  * @package PagaMasTarde\SeleniumFormUtils\Step
  */
-abstract class AbstractException extends \Exception
+abstract class AbstractExceptionTest extends TestCase
 {
 }

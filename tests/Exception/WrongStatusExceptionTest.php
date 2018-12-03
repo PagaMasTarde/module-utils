@@ -1,13 +1,15 @@
 <?php
 
-namespace PagaMasTarde\ModuleUtils\Exception;
+namespace Tests\PagaMasTarde\ModuleUtils;
+
+use PagaMasTarde\ModuleUtils\Exception\WrongStatusException;
 
 /**
  * Class WrongStatusException
  *
  * @package PagaMasTarde\ModuleUtils\Exception
  */
-class WrongStatusException extends AbstractException
+class WrongStatusExceptionTest extends AbstractExceptionTest
 {
     /**
      * ERROR_MESSAGE
@@ -15,15 +17,32 @@ class WrongStatusException extends AbstractException
     const ERROR_MESSAGE = 'Order status is not authorized. Current status: %s';
 
     /**
-     * WrongStatusException constructor.
-     *
-     * @param $currentStatus
+     * ERROR_CODE
      */
-    public function __construct($currentStatus)
-    {
-        $this->code = 403;
-        $this->message = sprintf(self::ERROR_MESSAGE, $currentStatus);
+    const ERROR_CODE = 403;
 
-        return parent::__construct($this->getMessage(), $this->getCode());
+    /**
+     * ERROR_STATUS
+     */
+    const ERROR_STATUS = 'UNCONFIRMED';
+
+    /**
+     * testConstructor
+     */
+    public function testConstructor()
+    {
+        $exception = new WrongStatusException(self::ERROR_STATUS);
+        $message = sprintf(self::ERROR_MESSAGE, self::ERROR_STATUS);
+        $this->assertEquals($message, $exception->getMessage());
+        $this->assertEquals(self::ERROR_CODE, $exception->getCode());
+    }
+
+    /**
+     * testConstant
+     */
+    public function testConstant()
+    {
+        $this->assertEquals(self::ERROR_MESSAGE, WrongStatusException::ERROR_MESSAGE);
+        $this->assertEquals(self::ERROR_CODE, WrongStatusException::ERROR_CODE);
     }
 }

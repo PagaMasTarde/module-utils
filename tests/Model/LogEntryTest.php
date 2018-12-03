@@ -1,75 +1,74 @@
 <?php
 
-namespace PagaMasTarde\ModuleUtils\Model;
+namespace Tests\PagaMasTarde\ModuleUtils;
 
-use Nayjest\StrCaseConverter\Str;
+use PHPUnit\Framework\TestCase;
+use PagaMasTarde\ModuleUtils\Model\LogEntry;
 
-class LogEntry
+class LogEntryTest extends TestCase
 {
     /**
-     * @var string $message
+     * INFO_MESSAGE
      */
-    protected $message;
+    const INFO_MESSAGE = 'Success message';
 
     /**
-     * @var string $code
+     * ERROR_MESSAGE
      */
-    protected $code;
+    const ERROR_MESSAGE = 'Error message';
 
-    /**
-     * @var string $line
-     */
-    protected $line;
-
-    /**
-     * @var string $file
-     */
-    protected $file;
-
-    /**
-     * @var string $trace
-     */
-    protected $trace;
-
-    /**
-     * LogEntry constructor.
-     */
-    public function __construct()
+    public function testInfo()
     {
+        $logEntry = new LogEntry();
+        $logEntry->info(self::INFO_MESSAGE);
+
+        $this->assertEquals(self::INFO_MESSAGE, $logEntry->getMessage());
+        $this->assertInstanceOf('PagaMasTarde\ModuleUtils\Model\LogEntry', $logEntry);
     }
 
-    public function info($message)
+    public function testError()
     {
-        $this->message = $message;
+        $logEntry = new LogEntry();
+        $logEntry->error(new \Exception(self::INFO_MESSAGE));
+        
+        $reflectCreateOrderMethod = new \ReflectionClass('PagaMasTarde\ModuleUtils\Model\LogEntry');
+        $property = $reflectCreateOrderMethod->getProperty('message');
+        $property->setAccessible(true);
+        $this->assertEquals($property->getValue($logEntry), $logEntry->getMessage());
+        
+        $property = $reflectCreateOrderMethod->getProperty('code');
+        $property->setAccessible(true);
+        $this->assertEquals($property->getValue($logEntry), $logEntry->getCode());
+        
+        $property = $reflectCreateOrderMethod->getProperty('line');
+        $property->setAccessible(true);
+        $this->assertEquals($property->getValue($logEntry), $logEntry->getLine());
+        
+        $property = $reflectCreateOrderMethod->getProperty('file');
+        $property->setAccessible(true);
+        $this->assertEquals($property->getValue($logEntry), $logEntry->getFile());
+        
+        $property = $reflectCreateOrderMethod->getProperty('trace');
+        $property->setAccessible(true);
+        $this->assertEquals($property->getValue($logEntry), $logEntry->getTrace());
 
-        return $this;
-    }
-
-    public function error(\Exception $exception)
-    {
-        $this->message = $exception->getMessage();
-        $this->code    = $exception->getCode();
-        $this->line    = $exception->getLine();
-        $this->file    = $exception->getFile();
-        $this->trace   = $exception->getTraceAsString();
-
-        return $this;
+        $this->assertInstanceOf('PagaMasTarde\ModuleUtils\Model\LogEntry', $logEntry);
     }
 
     /**
      * @return false|string
      */
-    public function toJson()
+    /*public function testToJson()
     {
         $response = $this->jsonSerialize();
 
-        return json_encode($response, JSON_UNESCAPED_SLASHES|JSON_PRETTY_PRINT);
-    }
+        return json_encode($response, JSON_UNESCAPED_SLASHES);
+    }*/
 
     /**
      * @return array
      */
-    public function jsonSerialize()
+    /*public function testJsonSerialize()
     {
         $arrayProperties = array();
 
@@ -80,89 +79,5 @@ class LogEntry
         }
 
         return $arrayProperties;
-    }
-
-    /**
-     * GETTERS Y SETTERS
-     */
-
-    /**
-     * @return string
-     */
-    public function getMessage()
-    {
-        return $this->message;
-    }
-
-    /**
-     * @param string $message
-     */
-    public function setMessage($message)
-    {
-        $this->message = $message;
-    }
-
-    /**
-     * @return string
-     */
-    public function getCode()
-    {
-        return $this->code;
-    }
-
-    /**
-     * @param string $code
-     */
-    public function setCode($code)
-    {
-        $this->code = $code;
-    }
-
-    /**
-     * @return string
-     */
-    public function getLine()
-    {
-        return $this->line;
-    }
-
-    /**
-     * @param string $line
-     */
-    public function setLine($line)
-    {
-        $this->line = $line;
-    }
-
-    /**
-     * @return string
-     */
-    public function getFile()
-    {
-        return $this->file;
-    }
-
-    /**
-     * @param string $file
-     */
-    public function setFile($file)
-    {
-        $this->file = $file;
-    }
-
-    /**
-     * @return string
-     */
-    public function getTrace()
-    {
-        return $this->trace;
-    }
-
-    /**
-     * @param string $trace
-     */
-    public function setTrace($trace)
-    {
-        $this->trace = $trace;
-    }
+    }*/
 }

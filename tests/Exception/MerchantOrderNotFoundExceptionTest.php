@@ -1,13 +1,15 @@
 <?php
 
-namespace PagaMasTarde\ModuleUtils\Exception;
+namespace Tests\PagaMasTarde\ModuleUtils;
+
+use PagaMasTarde\ModuleUtils\Exception\MerchantOrderNotFoundException;
 
 /**
  * Class MerchantOrderNotFoundException
  *
  * @package PagaMasTarde\ModuleUtils\Exception
  */
-class MerchantOrderNotFoundException extends AbstractException
+class MerchantOrderNotFoundExceptionTest extends AbstractExceptionTest
 {
     /**
      * ERROR_MESSAGE
@@ -15,13 +17,26 @@ class MerchantOrderNotFoundException extends AbstractException
     const ERROR_MESSAGE = 'Merchant order not found';
 
     /**
-     * MerchantOrderNotFoundException constructor.
+     * ERROR_CODE
      */
-    public function __construct()
-    {
-        $this->code = 404;
-        $this->message = self::ERROR_MESSAGE;
+    const ERROR_CODE = 404;
 
-        return parent::__construct($this->getMessage(), $this->getCode());
+    /**
+     * testConstructor
+     */
+    public function testConstructor()
+    {
+        $exception = new MerchantOrderNotFoundException();
+        $this->assertEquals(self::ERROR_MESSAGE, $exception->getMessage());
+        $this->assertEquals(self::ERROR_CODE, $exception->getCode());
+    }
+
+    /**
+     * testConstant
+     */
+    public function testConstant()
+    {
+        $this->assertEquals(self::ERROR_MESSAGE, MerchantOrderNotFoundException::ERROR_MESSAGE);
+        $this->assertEquals(self::ERROR_CODE, MerchantOrderNotFoundException::ERROR_CODE);
     }
 }

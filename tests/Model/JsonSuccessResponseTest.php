@@ -1,23 +1,19 @@
 <?php
 
-namespace PagaMasTarde\ModuleUtils\Model;
+namespace Tests\PagaMasTarde\ModuleUtils;
 
-class JsonExceptionResponse extends JsonResponse
+use PagaMasTarde\ModuleUtils\Model\JsonSuccessResponse;
+
+class JsonSuccessResponseTest extends JsonResponseTest
 {
     /**
-     * @var string $result
+     * testConstructor
      */
-    protected $result = 'Order not confirmed';
-
-    /**
-     * @var int $status
-     */
-    protected $statusCode = 500;
-
-    public function setException(\Exception $exception)
+    public function testConstructor()
     {
-        $this->result = $exception->getMessage();
-        $this->statusCode = $exception->getCode();
-        parent::__construct();
+        $jsonSuccessResponse = new JsonSuccessResponse();
+
+        $this->assertEquals($jsonSuccessResponse->getResult(), JsonSuccessResponse::RESULT);
+        $this->assertEquals($jsonSuccessResponse->getStatusCode(), JsonSuccessResponse::STATUS_CODE);
     }
 }

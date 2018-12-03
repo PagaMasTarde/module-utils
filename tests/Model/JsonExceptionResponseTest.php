@@ -1,23 +1,33 @@
 <?php
 
-namespace PagaMasTarde\ModuleUtils\Model;
+namespace Tests\PagaMasTarde\ModuleUtils;
 
-class JsonExceptionResponse extends JsonResponse
+use PagaMasTarde\ModuleUtils\Exception\ConcurrencyException;
+use PagaMasTarde\ModuleUtils\Model\JsonExceptionResponse;
+use PagaMasTarde\ModuleUtils\Model\JsonSuccessResponse;
+
+class JsonExceptionResponseTest extends JsonResponseTest
 {
     /**
-     * @var string $result
+     * testConstructor
      */
-    protected $result = 'Order not confirmed';
+    public function testConstructor()
+    {
+        $jsonSuccessResponse = new JsonSuccessResponse();
+
+        $this->assertEquals($jsonSuccessResponse->getResult(), JsonSuccessResponse::RESULT);
+        $this->assertEquals($jsonSuccessResponse->getStatusCode(), JsonSuccessResponse::STATUS_CODE);
+    }
 
     /**
-     * @var int $status
+     * testSetException
      */
-    protected $statusCode = 500;
-
-    public function setException(\Exception $exception)
+    public function testSetException()
     {
-        $this->result = $exception->getMessage();
-        $this->statusCode = $exception->getCode();
-        parent::__construct();
+        $jsonExceptionResponse = new JsonExceptionResponse();
+        $jsonExceptionResponse->setException(new ConcurrencyException());
+
+        $this->assertEquals($jsonExceptionResponse->getStatusCode(), ConcurrencyException::ERROR_CODE);
+        $this->assertEquals($jsonExceptionResponse->getResult(), ConcurrencyException::ERROR_MESSAGE);
     }
 }

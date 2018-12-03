@@ -1,30 +1,56 @@
 <?php
 
-namespace PagaMasTarde\ModuleUtils\Exception;
+namespace Tests\PagaMasTarde\ModuleUtils;
+
+use PagaMasTarde\ModuleUtils\Exception\AmountMismatchException;
 
 /**
  * Class AmountMismatchException
  *
  * @package PagaMasTarde\ModuleUtils\Exception
  */
-class AmountMismatchException extends AbstractException
+class AmountMismatchExceptionTest extends AbstractExceptionTest
 {
     /**
      * ERROR_MESSAGE
      */
-    const ERROR_MESSAGE = 'Amout mismatch error, expected %s and received %s';
+    const ERROR_MESSAGE = 'Amount mismatch error, expected %s and received %s';
 
     /**
-     * AmountMismatchException constructor.
-     *
-     * @param $expectedAmount
-     * @param $currentAmount
+     * ERROR_CODE
      */
-    public function __construct($expectedAmount, $currentAmount)
-    {
-        $this->code = 409;
-        $this->message = sprintf(self::ERROR_MESSAGE, $expectedAmount, $currentAmount);
+    const ERROR_CODE = 409;
 
-        return parent::__construct($this->getMessage(), $this->getCode());
+    /**
+     * EXPECTED_AMOUNT
+     */
+    const EXPECTED_AMOUNT = 10;
+
+    /**
+     * CURRENT_AMOUNT
+     */
+    const CURRENT_AMOUNT = 15;
+
+    /**
+     * testConstructor
+     */
+    public function testConstructor()
+    {
+        $exception = new AmountMismatchException(
+            self::EXPECTED_AMOUNT,
+            self::CURRENT_AMOUNT
+        );
+        $message = sprintf(self::ERROR_MESSAGE, self::EXPECTED_AMOUNT, self::CURRENT_AMOUNT);
+        $this->assertEquals($message, $exception->getMessage());
+        $this->assertEquals(self::ERROR_CODE, $exception->getCode());
+    }
+
+    /**
+     * testConstant
+     */
+    public function testConstant()
+    {
+        $this->assertEquals(self::ERROR_MESSAGE, AmountMismatchException::ERROR_MESSAGE);
+        $this->assertEquals(self::ERROR_CODE, AmountMismatchException::ERROR_CODE);
     }
 }
