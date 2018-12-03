@@ -63,7 +63,7 @@ class LogEntry
     {
         $response = $this->jsonSerialize();
 
-        return json_encode($response, JSON_UNESCAPED_SLASHES|JSON_PRETTY_PRINT);
+        return json_encode($response, JSON_UNESCAPED_SLASHES);
     }
 
     /**
