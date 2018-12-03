@@ -12,7 +12,7 @@ class AmountMismatchException extends AbstractException
     /**
      * ERROR_MESSAGE
      */
-    const ERROR_MESSAGE = 'Amout mismatch error, expected %s and received %s';
+    const ERROR_MESSAGE = 'Amount mismatch error, expected %s and received %s';
 
     /**
      * ERROR_CODE
