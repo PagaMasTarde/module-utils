@@ -2,6 +2,10 @@
 
 namespace PagaMasTarde\ModuleUtils\Model;
 
+/**
+ * Class JsonExceptionResponse
+ * @package PagaMasTarde\ModuleUtils\Model
+ */
 class JsonExceptionResponse extends JsonResponse
 {
     /**

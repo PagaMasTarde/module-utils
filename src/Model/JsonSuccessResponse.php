@@ -2,22 +2,20 @@
 
 namespace PagaMasTarde\ModuleUtils\Model;
 
-class JsonExceptionResponse extends JsonResponse
+/**
+ * Class JsonSuccessResponse
+ * @package PagaMasTarde\ModuleUtils\Model
+ */
+class JsonSuccessResponse extends JsonResponse
 {
     /**
      * @var string $result
      */
-    protected $result = 'Order not confirmed';
+    protected $result = 'Order confirmed';
 
     /**
      * @var int $status
      */
-    protected $statusCode = 500;
+    protected $statusCode = 200;
 
-    public function setException(\Exception $exception)
-    {
-        $this->result = $exception->getMessage();
-        $this->statusCode = $exception->getCode();
-        parent::__construct();
-    }
 }
