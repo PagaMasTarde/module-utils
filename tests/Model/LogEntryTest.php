@@ -17,6 +17,9 @@ class LogEntryTest extends TestCase
      */
     const ERROR_MESSAGE = 'Error message';
 
+    /**
+     * testInfo
+     */
     public function testInfo()
     {
         $logEntry = new LogEntry();
@@ -26,6 +29,11 @@ class LogEntryTest extends TestCase
         $this->assertInstanceOf('PagaMasTarde\ModuleUtils\Model\LogEntry', $logEntry);
     }
 
+    /**
+     * testError
+     *
+     * @throws \ReflectionException
+     */
     public function testError()
     {
         $logEntry = new LogEntry();
@@ -56,28 +64,27 @@ class LogEntryTest extends TestCase
     }
 
     /**
-     * @return false|string
+     * testToJson
      */
-    /*public function testToJson()
+    public function testToJson()
     {
-        $response = $this->jsonSerialize();
+        $logEntry = new LogEntry();
+        $logEntry->info(self::INFO_MESSAGE);
+        $jsonArray = $logEntry->toJson();
 
-        return json_encode($response, JSON_UNESCAPED_SLASHES);
-    }*/
+        $this->assertJson($jsonArray);
+    }
 
     /**
-     * @return array
+     * testJsonSerialize
      */
-    /*public function testJsonSerialize()
+    public function testJsonSerialize()
     {
-        $arrayProperties = array();
+        $logEntry = new LogEntry();
+        $logEntry->info(self::INFO_MESSAGE);
+        $jsonArray = $logEntry->jsonSerialize();
 
-        foreach ($this as $key => $value) {
-            if (!empty($value)) {
-                $arrayProperties[Str::toSnakeCase($key)] = $value;
-            }
-        }
-
-        return $arrayProperties;
-    }*/
+        $this->assertArrayHasKey('message', $jsonArray);
+        $this->assertEquals($logEntry->getMessage(), self::INFO_MESSAGE);
+    }
 }
