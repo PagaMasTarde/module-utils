@@ -35,6 +35,8 @@ class JsonExceptionResponse extends JsonResponse
     {
         $this->result = self::RESULT;
         $this->statusCode = self::STATUS_CODE;
+
+        parent::__construct();
     }
 
     /**
@@ -44,7 +46,6 @@ class JsonExceptionResponse extends JsonResponse
     {
         $this->result = $exception->getMessage();
         $this->statusCode = $exception->getCode();
-        parent::__construct();
     }
 
     /**

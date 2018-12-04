@@ -35,6 +35,8 @@ class JsonSuccessResponse extends JsonResponse
     {
         $this->result = self::RESULT;
         $this->statusCode = self::STATUS_CODE;
+
+        parent::__construct();
     }
 
     /**

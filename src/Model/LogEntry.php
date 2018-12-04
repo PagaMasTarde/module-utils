@@ -31,13 +31,6 @@ class LogEntry
      */
     protected $trace;
 
-    /**
-     * LogEntry constructor.
-     */
-    public function __construct()
-    {
-    }
-
     public function info($message)
     {
         $this->message = $message;
