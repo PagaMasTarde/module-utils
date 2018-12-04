@@ -5,7 +5,8 @@
 [![composer.lock](https://poser.pugx.org/pagamastarde/module-utils/composerlock)](https://packagist.org/packages/pagamastarde/module-utils)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/PagaMasTarde/module-utils/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/PagaMasTarde/module-utils/?branch=master)
 
-// ADD LIBRARY DESCRIPTION
+Module Utils will help you when developing integration test of Paga+Tarde. The library will use the Exception object to
+find some problem. Check each exception type to find the error which causes the problem. 
 
 ## How to use
 
@@ -24,14 +25,20 @@ Finally, be sure to include the autoloader:
 require_once '/path/to/your-project/vendor/autoload.php';
 ```
 
-Once the library is ready and inside the project the stub objects will available and
-the ordersApiClient will also available.
+Once the library is ready and inside the project the stub objects will available and the moduleUtils will also 
+available.
 
 ```php
-
-// Instructions 
-
-//ADD HOW TO INVOKE
+//Amount mismatch Example
+try {
+    if ($price1 != $price2) {
+        throw new AmountMismatchException($price1, $price2);
+    }
+} catch(AmountMismatchException $e) {
+    $jsonResponse = new JsonExceptionResponse();
+    $jsonResponse->setException($e);
+    $jsonResponse->toJson();
+}
 
 ```
 
