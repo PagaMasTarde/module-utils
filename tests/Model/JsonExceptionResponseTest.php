@@ -13,6 +13,7 @@ use PagaMasTarde\ModuleUtils\Exception\UnknownException;
 use PagaMasTarde\ModuleUtils\Exception\WrongStatusException;
 use PagaMasTarde\ModuleUtils\Model\JsonExceptionResponse;
 use PagaMasTarde\ModuleUtils\Model\JsonSuccessResponse;
+use Tests\PagaMasTarde\ModuleUtils\Model\JsonResponseTest;
 
 class JsonExceptionResponseTest extends JsonResponseTest
 {

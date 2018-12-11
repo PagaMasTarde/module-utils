@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\PagaMasTarde\ModuleUtils;
+namespace Tests\PagaMasTarde\ModuleUtils\Model;
 
 use PHPUnit\Framework\TestCase;
 
