@@ -1,11 +1,11 @@
 <?php
 
-namespace Tests\PagaMasTarde\ModuleUtils;
+namespace Tests\PagaMasTarde\ModuleUtils\Model\Response;
 
-use PagaMasTarde\ModuleUtils\Model\JsonSuccessResponse;
-use Tests\PagaMasTarde\ModuleUtils\Model\JsonResponseTest;
+use PagaMasTarde\ModuleUtils\Model\Response\JsonSuccessResponse;
+use PHPUnit\Framework\TestCase;
 
-class JsonSuccessResponseTest extends JsonResponseTest
+class JsonSuccessResponseTest extends TestCase
 {
     /**
      * testConstructor

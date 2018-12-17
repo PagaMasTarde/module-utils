@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\PagaMasTarde\ModuleUtils;
+namespace Tests\PagaMasTarde\ModuleUtils\Model\Response;
 
 use PagaMasTarde\ModuleUtils\Exception\AlreadyProcessedException;
 use PagaMasTarde\ModuleUtils\Exception\AmountMismatchException;
@@ -11,11 +11,14 @@ use PagaMasTarde\ModuleUtils\Exception\NoOrderFoundException;
 use PagaMasTarde\ModuleUtils\Exception\NoQuoteFoundException;
 use PagaMasTarde\ModuleUtils\Exception\UnknownException;
 use PagaMasTarde\ModuleUtils\Exception\WrongStatusException;
-use PagaMasTarde\ModuleUtils\Model\JsonExceptionResponse;
-use PagaMasTarde\ModuleUtils\Model\JsonSuccessResponse;
-use Tests\PagaMasTarde\ModuleUtils\Model\JsonResponseTest;
+use PagaMasTarde\ModuleUtils\Model\Response\JsonExceptionResponse;
+use PagaMasTarde\ModuleUtils\Model\Response\JsonSuccessResponse;
+use PHPUnit\Framework\TestCase;
+use Tests\PagaMasTarde\ModuleUtils\AmountMismatchExceptionTest;
+use Tests\PagaMasTarde\ModuleUtils\UnknownExceptionTest;
+use Tests\PagaMasTarde\ModuleUtils\WrongStatusExceptionTest;
 
-class JsonExceptionResponseTest extends JsonResponseTest
+class JsonExceptionResponseTest extends TestCase
 {
     /**
      * testConstructor

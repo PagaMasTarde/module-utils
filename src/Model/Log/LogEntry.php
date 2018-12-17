@@ -1,6 +1,6 @@
 <?php
 
-namespace PagaMasTarde\ModuleUtils\Model;
+namespace PagaMasTarde\ModuleUtils\Model\Log;
 
 use Nayjest\StrCaseConverter\Str;
 

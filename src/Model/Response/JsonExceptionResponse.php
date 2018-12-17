@@ -1,12 +1,12 @@
 <?php
 
-namespace PagaMasTarde\ModuleUtils\Model;
+namespace PagaMasTarde\ModuleUtils\Model\Response;
 
 /**
  * Class JsonExceptionResponse
  * @package PagaMasTarde\ModuleUtils\Model
  */
-class JsonExceptionResponse extends JsonResponse
+class JsonExceptionResponse extends AbstractJsonResponse
 {
     /**
      * RESULT_DESCRIPTION

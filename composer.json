@@ -5,7 +5,8 @@
   "description": "Paga+Tarde PHP Library. Module utils",
   "type": "library",
   "require": {
-    "php": ">=5.3"
+    "php": ">=5.3",
+    "ext-json": "*"
   },
   "require-dev": {
     "phpunit/phpunit": "^4.8",
