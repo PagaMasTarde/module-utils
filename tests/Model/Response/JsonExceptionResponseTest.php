@@ -7,8 +7,9 @@ use PagaMasTarde\ModuleUtils\Exception\AmountMismatchException;
 use PagaMasTarde\ModuleUtils\Exception\ConcurrencyException;
 use PagaMasTarde\ModuleUtils\Exception\MerchantOrderNotFoundException;
 use PagaMasTarde\ModuleUtils\Exception\NoIdentificationException;
-use PagaMasTarde\ModuleUtils\Exception\NoOrderFoundException;
-use PagaMasTarde\ModuleUtils\Exception\NoQuoteFoundException;
+use PagaMasTarde\ModuleUtils\Exception\OrderNotFoundException;
+use PagaMasTarde\ModuleUtils\Exception\QuoteNotFoundException;
+use PagaMasTarde\ModuleUtils\Exception\ConfigurationNotFoundException;
 use PagaMasTarde\ModuleUtils\Exception\UnknownException;
 use PagaMasTarde\ModuleUtils\Exception\WrongStatusException;
 use PagaMasTarde\ModuleUtils\Model\Response\JsonExceptionResponse;
@@ -89,6 +90,18 @@ class JsonExceptionResponseTest extends TestCase
         $this->assertEquals($jsonExceptionResponse->getResult(), MerchantOrderNotFoundException::ERROR_MESSAGE);
     }
 
+   /**
+     * testSetExceptionWithMerchantConfigurationNotFoundException
+     */
+    public function testSetExceptionWithMerchantConfigurationNotFoundException()
+    {
+        $jsonExceptionResponse = new JsonExceptionResponse();
+        $jsonExceptionResponse->setException(new ConfigurationNotFoundException());
+
+        $this->assertEquals($jsonExceptionResponse->getStatusCode(), ConfigurationNotFoundException::ERROR_CODE);
+        $this->assertEquals($jsonExceptionResponse->getResult(), ConfigurationNotFoundException::ERROR_MESSAGE);
+    }
+
     /**
      * testSetExceptionWithNoIdentificationException
      */
@@ -102,27 +115,29 @@ class JsonExceptionResponseTest extends TestCase
     }
 
     /**
-     * testSetExceptionWithNoOrderFoundException
+     * testSetExceptionWithOrderNotFoundException
      */
-    public function testSetExceptionWithNoOrderFoundException()
+    public function testSetExceptionWithOrderNotFoundException()
     {
         $jsonExceptionResponse = new JsonExceptionResponse();
-        $jsonExceptionResponse->setException(new NoOrderFoundException());
+        $jsonExceptionResponse->setException(new OrderNotFoundException());
 
-        $this->assertEquals($jsonExceptionResponse->getStatusCode(), NoOrderFoundException::ERROR_CODE);
-        $this->assertEquals($jsonExceptionResponse->getResult(), NoOrderFoundException::ERROR_MESSAGE);
+        $this->assertEquals($jsonExceptionResponse->getStatusCode(), OrderNotFoundException::ERROR_CODE);
+        $this->assertEquals($jsonExceptionResponse->getResult(), OrderNotFoundException::ERROR_MESSAGE);
     }
 
     /**
-     * testSetExceptionWithNoQuoteFoundException
+     * testSetExceptionWithNo
+     *
+    QuoteNotFoundException
      */
-    public function testSetExceptionWithNoQuoteFoundException()
+    public function testSetExceptionWithQuoteNotFoundException()
     {
         $jsonExceptionResponse = new JsonExceptionResponse();
-        $jsonExceptionResponse->setException(new NoQuoteFoundException());
+        $jsonExceptionResponse->setException(new QuoteNotFoundException());
 
-        $this->assertEquals($jsonExceptionResponse->getStatusCode(), NoQuoteFoundException::ERROR_CODE);
-        $this->assertEquals($jsonExceptionResponse->getResult(), NoQuoteFoundException::ERROR_MESSAGE);
+        $this->assertEquals($jsonExceptionResponse->getStatusCode(), QuoteNotFoundException::ERROR_CODE);
+        $this->assertEquals($jsonExceptionResponse->getResult(), QuoteNotFoundException::ERROR_MESSAGE);
     }
 
     /**

@@ -3,24 +3,24 @@
 namespace PagaMasTarde\ModuleUtils\Exception;
 
 /**
- * Class NoOrderFoundException
+ * Class QuoteNotFoundException
  *
  * @package PagaMasTarde\ModuleUtils\Exception
  */
-class NoOrderFoundException extends AbstractException
+class QuoteNotFoundException extends AbstractException
 {
     /**
      * ERROR_MESSAGE
      */
-    const ERROR_MESSAGE = 'Unable to get the order in Paga+Tarde';
+    const ERROR_MESSAGE = 'No quote found';
 
     /**
      * ERROR_CODE
      */
-    const ERROR_CODE = 400;
+    const ERROR_CODE = 429;
 
     /**
-     * NoOrderFoundException constructor.
+     * QuoteNotFoundException constructor.
      */
     public function __construct()
     {

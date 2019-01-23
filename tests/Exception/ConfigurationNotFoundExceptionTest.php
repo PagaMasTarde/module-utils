@@ -2,19 +2,19 @@
 
 namespace Tests\PagaMasTarde\ModuleUtils;
 
-use PagaMasTarde\ModuleUtils\Exception\NoOrderFoundException;
+use PagaMasTarde\ModuleUtils\Exception\ConfigurationNotFoundException;
 
 /**
- * Class NoOrderFoundException
+ * Class ConfigurationNotFoundException
  *
  * @package PagaMasTarde\ModuleUtils\Exception
  */
-class NoOrderFoundExceptionTest extends AbstractExceptionTest
+class ConfigurationNotFoundExceptionTest extends AbstractExceptionTest
 {
     /**
      * ERROR_MESSAGE
      */
-    const ERROR_MESSAGE = 'Unable to get the order in Paga+Tarde';
+    const ERROR_MESSAGE = 'Unable to load module configuration';
 
     /**
      * ERROR_CODE
@@ -26,7 +26,7 @@ class NoOrderFoundExceptionTest extends AbstractExceptionTest
      */
     public function testConstructor()
     {
-        $exception = new NoOrderFoundException();
+        $exception = new ConfigurationNotFoundException();
         $this->assertEquals(self::ERROR_MESSAGE, $exception->getMessage());
         $this->assertEquals(self::ERROR_CODE, $exception->getCode());
     }
@@ -36,7 +36,7 @@ class NoOrderFoundExceptionTest extends AbstractExceptionTest
      */
     public function testConstant()
     {
-        $this->assertEquals(self::ERROR_MESSAGE, NoOrderFoundException::ERROR_MESSAGE);
-        $this->assertEquals(self::ERROR_CODE, NoOrderFoundException::ERROR_CODE);
+        $this->assertEquals(self::ERROR_MESSAGE, ConfigurationNotFoundException::ERROR_MESSAGE);
+        $this->assertEquals(self::ERROR_CODE, ConfigurationNotFoundException::ERROR_CODE);
     }
 }
