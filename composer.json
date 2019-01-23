@@ -1,7 +1,6 @@
 {
   "name": "pagamastarde/module-utils",
   "license": "proprietary",
-  "version": "1.0.0",
   "description": "Paga+Tarde PHP Library. Module utils",
   "type": "library",
   "require": {
