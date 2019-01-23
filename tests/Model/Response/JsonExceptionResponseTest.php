@@ -9,6 +9,7 @@ use PagaMasTarde\ModuleUtils\Exception\MerchantOrderNotFoundException;
 use PagaMasTarde\ModuleUtils\Exception\NoIdentificationException;
 use PagaMasTarde\ModuleUtils\Exception\OrderNotFoundException;
 use PagaMasTarde\ModuleUtils\Exception\QuoteNotFoundException;
+use PagaMasTarde\ModuleUtils\Exception\ConfigurationNotFoundException;
 use PagaMasTarde\ModuleUtils\Exception\UnknownException;
 use PagaMasTarde\ModuleUtils\Exception\WrongStatusException;
 use PagaMasTarde\ModuleUtils\Model\Response\JsonExceptionResponse;
@@ -87,6 +88,18 @@ class JsonExceptionResponseTest extends TestCase
 
         $this->assertEquals($jsonExceptionResponse->getStatusCode(), MerchantOrderNotFoundException::ERROR_CODE);
         $this->assertEquals($jsonExceptionResponse->getResult(), MerchantOrderNotFoundException::ERROR_MESSAGE);
+    }
+
+   /**
+     * testSetExceptionWithMerchantConfigurationNotFoundException
+     */
+    public function testSetExceptionWithMerchantConfigurationNotFoundException()
+    {
+        $jsonExceptionResponse = new JsonExceptionResponse();
+        $jsonExceptionResponse->setException(new ConfigurationNotFoundException());
+
+        $this->assertEquals($jsonExceptionResponse->getStatusCode(), ConfigurationNotFoundException::ERROR_CODE);
+        $this->assertEquals($jsonExceptionResponse->getResult(), ConfigurationNotFoundException::ERROR_MESSAGE);
     }
 
     /**
