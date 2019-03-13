@@ -1,13 +1,13 @@
 <?php
 
-namespace Tests\PagaMasTarde\ModuleUtils;
+namespace Tests\Pagantis\ModuleUtils;
 
-use PagaMasTarde\ModuleUtils\Exception\MerchantOrderNotFoundException;
+use Pagantis\ModuleUtils\Exception\MerchantOrderNotFoundException;
 
 /**
  * Class MerchantOrderNotFoundException
  *
- * @package PagaMasTarde\ModuleUtils\Exception
+ * @package Pagantis\ModuleUtils\Exception
  */
 class MerchantOrderNotFoundExceptionTest extends AbstractExceptionTest
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace Tests\PagaMasTarde\ModuleUtils\Model\Response;
+namespace Tests\Pagantis\ModuleUtils\Model\Response;
 
-use PagaMasTarde\ModuleUtils\Model\Response\JsonSuccessResponse;
+use Pagantis\ModuleUtils\Model\Response\JsonSuccessResponse;
 use PHPUnit\Framework\TestCase;
 
 class JsonSuccessResponseTest extends TestCase

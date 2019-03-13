@@ -1,13 +1,13 @@
 <?php
 
-namespace Tests\PagaMasTarde\ModuleUtils;
+namespace Tests\Pagantis\ModuleUtils;
 
-use PagaMasTarde\ModuleUtils\Exception\AmountMismatchException;
+use Pagantis\ModuleUtils\Exception\AmountMismatchException;
 
 /**
  * Class AmountMismatchException
  *
- * @package PagaMasTarde\ModuleUtils\Exception
+ * @package Pagantis\ModuleUtils\Exception
  */
 class AmountMismatchExceptionTest extends AbstractExceptionTest
 {

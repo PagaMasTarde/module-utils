@@ -1,24 +1,25 @@
-# Module Utils <img src="https://pagamastarde.com/img/icons/logo.svg" width="100" align="right">
+# Module Utils <img src="https://www.pagantis.com/wp-content/uploads/2019/02/cropped-pagantis_logo-1.png" width="100" align="right">
 
-[![Build Status](https://travis-ci.org/PagaMasTarde/module-utils.svg?branch=master)](https://travis-ci.org/PagaMasTarde/module-utils)
-[![Latest Stable Version](https://poser.pugx.org/pagamastarde/module-utils/v/stable)](https://packagist.org/packages/pagamastarde/module-utils)
-[![composer.lock](https://poser.pugx.org/pagamastarde/module-utils/composerlock)](https://packagist.org/packages/pagamastarde/module-utils)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/PagaMasTarde/module-utils/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/PagaMasTarde/module-utils/?branch=master)
+CircleCI: [![CircleCI](https://circleci.com/gh/pagantis/orders-api-client/tree/master.svg?style=svg)](https://circleci.com/gh/pagantis/orders-api-client/tree/master)
 
-Module Utils will help you when developing integration test of Paga+Tarde. The library will use the Exception object to
+[![Latest Stable Version](https://poser.pugx.org/pagantis/module-utils/v/stable)](https://packagist.org/packages/pagantis/module-utils)
+[![composer.lock](https://poser.pugx.org/pagantis/module-utils/composerlock)](https://packagist.org/packages/pagantis/module-utils)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/pagantis/module-utils/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/pagantis/module-utils/?branch=master)
+
+Module Utils will help you when developing integration test of Pagantis. The library will use the Exception object to
 find some problem. Check each exception type to find the error which causes the problem. 
 
 ## How to use
 
 Install the library by:
 
-- Downloading it from [here](https://github.com/PagaMasTarde/module-utils/releases/latest)
+- Downloading it from [here](https://github.com/pagantis/module-utils/releases/latest)
 
-https://github.com/PagaMasTarde/module-utils/releases/latest
+https://github.com/pagantis/module-utils/releases/latest
 
 - Using Composer:
 ```php
-composer require pagamastarde/module-utils
+composer require pagantis/module-utils
 ```
 Finally, be sure to include the autoloader:
 ```php
@@ -49,4 +50,4 @@ please create a pull request here following the PSR-2 code style and we will use
 the code and if al test pass and no issues are detected by SensioLab Insights you could will be ready
 to merge.
 
-* [Issue Tracker](https://github.com/PagaMasTarde/module-utils/issues)
+* [Issue Tracker](https://github.com/pagantis/module-utils/issues)

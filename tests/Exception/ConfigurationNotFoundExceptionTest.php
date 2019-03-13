@@ -1,13 +1,13 @@
 <?php
 
-namespace Tests\PagaMasTarde\ModuleUtils;
+namespace Tests\Pagantis\ModuleUtils;
 
-use PagaMasTarde\ModuleUtils\Exception\ConfigurationNotFoundException;
+use Pagantis\ModuleUtils\Exception\ConfigurationNotFoundException;
 
 /**
  * Class ConfigurationNotFoundException
  *
- * @package PagaMasTarde\ModuleUtils\Exception
+ * @package Pagantis\ModuleUtils\Exception
  */
 class ConfigurationNotFoundExceptionTest extends AbstractExceptionTest
 {

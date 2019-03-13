@@ -1,13 +1,13 @@
 <?php
 
-namespace Tests\PagaMasTarde\ModuleUtils;
+namespace Tests\Pagantis\ModuleUtils;
 
-use PagaMasTarde\ModuleUtils\Exception\OrderNotCreatedException;
+use Pagantis\ModuleUtils\Exception\OrderNotCreatedException;
 
 /**
  * Class OrderNotCreatedException
  *
- * @package PagaMasTarde\ModuleUtils\Exception
+ * @package Pagantis\ModuleUtils\Exception
  */
 class OrderNotCreatedExceptionTest extends AbstractExceptionTest
 {

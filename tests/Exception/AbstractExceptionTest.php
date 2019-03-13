@@ -1,13 +1,13 @@
 <?php
 
-namespace Tests\PagaMasTarde\ModuleUtils;
+namespace Tests\Pagantis\ModuleUtils;
 
 use PHPUnit\Framework\TestCase;
 
 /**
  * Class AbstractExceptionTest
  *
- * @package PagaMasTarde\SeleniumFormUtils\Step
+ * @package Pagantis\SeleniumFormUtils\Step
  */
 abstract class AbstractExceptionTest extends TestCase
 {

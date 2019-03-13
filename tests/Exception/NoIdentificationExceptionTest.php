@@ -1,13 +1,13 @@
 <?php
 
-namespace Tests\PagaMasTarde\ModuleUtils;
+namespace Tests\Pagantis\ModuleUtils;
 
-use PagaMasTarde\ModuleUtils\Exception\NoIdentificationException;
+use Pagantis\ModuleUtils\Exception\NoIdentificationException;
 
 /**
  * Class NoIdentificationException
  *
- * @package PagaMasTarde\ModuleUtils\Exception
+ * @package Pagantis\ModuleUtils\Exception
  */
 class NoIdentificationExceptionTest extends AbstractExceptionTest
 {

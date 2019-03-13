@@ -1,7 +1,7 @@
 {
-  "name": "pagamastarde/module-utils",
+  "name": "pagantis/module-utils",
   "license": "proprietary",
-  "description": "Paga+Tarde PHP Library. Module utils",
+  "description": "Pagantis PHP Library. Module utils",
   "type": "library",
   "require": {
     "php": ">=5.3",
@@ -16,18 +16,18 @@
   },
   "autoload": {
     "psr-4": {
-      "PagaMasTarde\\ModuleUtils\\": "src/"
+      "Pagantis\\ModuleUtils\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Tests\\PagaMasTarde\\ModuleUtils\\": "tests/"
+      "Tests\\Pagantis\\ModuleUtils\\": "tests/"
     }
   },
   "authors": [
     {
-      "name": "DigitalOrigin",
-      "email": "cromero@digitalorigin.com"
+      "name": "Pagantis",
+      "email": "integration@pagantis.com"
     }
   ]
 }
