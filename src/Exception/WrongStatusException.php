@@ -1,11 +1,11 @@
 <?php
 
-namespace PagaMasTarde\ModuleUtils\Exception;
+namespace Pagantis\ModuleUtils\Exception;
 
 /**
  * Class WrongStatusException
  *
- * @package PagaMasTarde\ModuleUtils\Exception
+ * @package Pagantis\ModuleUtils\Exception
  */
 class WrongStatusException extends AbstractException
 {

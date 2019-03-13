@@ -1,6 +1,6 @@
 <?php
 
-namespace PagaMasTarde\ModuleUtils\Model\Log;
+namespace Pagantis\ModuleUtils\Model\Log;
 
 use Nayjest\StrCaseConverter\Str;
 
@@ -56,7 +56,7 @@ class LogEntry
     {
         $response = $this->jsonSerialize();
 
-        return json_encode($response, JSON_UNESCAPED_SLASHES);
+        return json_encode($response);
     }
 
     /**

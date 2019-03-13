@@ -1,14 +1,14 @@
 <?php
 
-namespace PagaMasTarde\ModuleUtils\Model\Response;
+namespace Pagantis\ModuleUtils\Model\Response;
 
 use Nayjest\StrCaseConverter\Str;
 
 /**
  * Class AbstractJsonResponse
- * @package PagaMasTarde\ModuleUtils\Model\Response
+ * @package Pagantis\ModuleUtils\Model\Response
  */
-abstract class AbstractJsonResponse implements \JsonSerializable
+abstract class AbstractJsonResponse
 {
     /**
      * @var int $timestamp

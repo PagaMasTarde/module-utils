@@ -1,13 +1,13 @@
 <?php
 
-namespace Tests\PagaMasTarde\ModuleUtils;
+namespace Tests\Pagantis\ModuleUtils;
 
-use PagaMasTarde\ModuleUtils\Exception\AlreadyProcessedException;
+use Pagantis\ModuleUtils\Exception\AlreadyProcessedException;
 
 /**
  * Class AlreadyProcessedException
  *
- * @package PagaMasTarde\ModuleUtils\Exception
+ * @package Pagantis\ModuleUtils\Exception
  */
 class AlreadyProcessedExceptionTest extends AbstractExceptionTest
 {

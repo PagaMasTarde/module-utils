@@ -1,11 +1,11 @@
 <?php
 
-namespace PagaMasTarde\ModuleUtils\Exception;
+namespace Pagantis\ModuleUtils\Exception;
 
 /**
  * Class MerchantOrderNotFoundException
  *
- * @package PagaMasTarde\ModuleUtils\Exception
+ * @package Pagantis\ModuleUtils\Exception
  */
 class MerchantOrderNotFoundException extends AbstractException
 {

@@ -1,23 +1,23 @@
 <?php
 
-namespace Tests\PagaMasTarde\ModuleUtils\Model\Response;
+namespace Tests\Pagantis\ModuleUtils\Model\Response;
 
-use PagaMasTarde\ModuleUtils\Exception\AlreadyProcessedException;
-use PagaMasTarde\ModuleUtils\Exception\AmountMismatchException;
-use PagaMasTarde\ModuleUtils\Exception\ConcurrencyException;
-use PagaMasTarde\ModuleUtils\Exception\MerchantOrderNotFoundException;
-use PagaMasTarde\ModuleUtils\Exception\NoIdentificationException;
-use PagaMasTarde\ModuleUtils\Exception\OrderNotFoundException;
-use PagaMasTarde\ModuleUtils\Exception\QuoteNotFoundException;
-use PagaMasTarde\ModuleUtils\Exception\ConfigurationNotFoundException;
-use PagaMasTarde\ModuleUtils\Exception\UnknownException;
-use PagaMasTarde\ModuleUtils\Exception\WrongStatusException;
-use PagaMasTarde\ModuleUtils\Model\Response\JsonExceptionResponse;
-use PagaMasTarde\ModuleUtils\Model\Response\JsonSuccessResponse;
+use Pagantis\ModuleUtils\Exception\AlreadyProcessedException;
+use Pagantis\ModuleUtils\Exception\AmountMismatchException;
+use Pagantis\ModuleUtils\Exception\ConcurrencyException;
+use Pagantis\ModuleUtils\Exception\MerchantOrderNotFoundException;
+use Pagantis\ModuleUtils\Exception\NoIdentificationException;
+use Pagantis\ModuleUtils\Exception\OrderNotFoundException;
+use Pagantis\ModuleUtils\Exception\QuoteNotFoundException;
+use Pagantis\ModuleUtils\Exception\ConfigurationNotFoundException;
+use Pagantis\ModuleUtils\Exception\UnknownException;
+use Pagantis\ModuleUtils\Exception\WrongStatusException;
+use Pagantis\ModuleUtils\Model\Response\JsonExceptionResponse;
+use Pagantis\ModuleUtils\Model\Response\JsonSuccessResponse;
 use PHPUnit\Framework\TestCase;
-use Tests\PagaMasTarde\ModuleUtils\AmountMismatchExceptionTest;
-use Tests\PagaMasTarde\ModuleUtils\UnknownExceptionTest;
-use Tests\PagaMasTarde\ModuleUtils\WrongStatusExceptionTest;
+use Tests\Pagantis\ModuleUtils\AmountMismatchExceptionTest;
+use Tests\Pagantis\ModuleUtils\UnknownExceptionTest;
+use Tests\Pagantis\ModuleUtils\WrongStatusExceptionTest;
 
 class JsonExceptionResponseTest extends TestCase
 {

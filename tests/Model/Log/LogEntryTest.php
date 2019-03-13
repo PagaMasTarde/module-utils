@@ -1,9 +1,9 @@
 <?php
 
-namespace Tests\PagaMasTarde\ModuleUtils\Model\Log;
+namespace Tests\Pagantis\ModuleUtils\Model\Log;
 
 use PHPUnit\Framework\TestCase;
-use PagaMasTarde\ModuleUtils\Model\Log\LogEntry;
+use Pagantis\ModuleUtils\Model\Log\LogEntry;
 
 class LogEntryTest extends TestCase
 {
@@ -26,7 +26,7 @@ class LogEntryTest extends TestCase
         $logEntry->info(self::INFO_MESSAGE);
 
         $this->assertEquals(self::INFO_MESSAGE, $logEntry->getMessage());
-        $this->assertInstanceOf('PagaMasTarde\ModuleUtils\Model\Log\LogEntry', $logEntry);
+        $this->assertInstanceOf('Pagantis\ModuleUtils\Model\Log\LogEntry', $logEntry);
     }
 
     /**
@@ -39,7 +39,7 @@ class LogEntryTest extends TestCase
         $logEntry = new LogEntry();
         $logEntry->error(new \Exception(self::INFO_MESSAGE));
         
-        $reflectCreateOrderMethod = new \ReflectionClass('PagaMasTarde\ModuleUtils\Model\Log\LogEntry');
+        $reflectCreateOrderMethod = new \ReflectionClass('Pagantis\ModuleUtils\Model\Log\LogEntry');
         $property = $reflectCreateOrderMethod->getProperty('message');
         $property->setAccessible(true);
         $this->assertEquals($property->getValue($logEntry), $logEntry->getMessage());
@@ -60,7 +60,7 @@ class LogEntryTest extends TestCase
         $property->setAccessible(true);
         $this->assertEquals($property->getValue($logEntry), $logEntry->getTrace());
 
-        $this->assertInstanceOf('PagaMasTarde\ModuleUtils\Model\Log\LogEntry', $logEntry);
+        $this->assertInstanceOf('Pagantis\ModuleUtils\Model\Log\LogEntry', $logEntry);
     }
 
     /**

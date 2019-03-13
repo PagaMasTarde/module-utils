@@ -1,13 +1,13 @@
 <?php
 
-namespace Tests\PagaMasTarde\ModuleUtils;
+namespace Tests\Pagantis\ModuleUtils;
 
-use PagaMasTarde\ModuleUtils\Exception\UnknownException;
+use Pagantis\ModuleUtils\Exception\UnknownException;
 
 /**
  * Class UnknownException
  *
- * @package PagaMasTarde\ModuleUtils\Exception
+ * @package Pagantis\ModuleUtils\Exception
  */
 class UnknownExceptionTest extends AbstractExceptionTest
 {

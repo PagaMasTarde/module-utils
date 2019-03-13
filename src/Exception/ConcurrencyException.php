@@ -1,11 +1,11 @@
 <?php
 
-namespace PagaMasTarde\ModuleUtils\Exception;
+namespace Pagantis\ModuleUtils\Exception;
 
 /**
  * Class ConcurrencyException
  *
- * @package PagaMasTarde\ModuleUtils\Exception
+ * @package Pagantis\ModuleUtils\Exception
  */
 class ConcurrencyException extends AbstractException
 {

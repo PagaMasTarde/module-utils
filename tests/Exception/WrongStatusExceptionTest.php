@@ -1,13 +1,13 @@
 <?php
 
-namespace Tests\PagaMasTarde\ModuleUtils;
+namespace Tests\Pagantis\ModuleUtils;
 
-use PagaMasTarde\ModuleUtils\Exception\WrongStatusException;
+use Pagantis\ModuleUtils\Exception\WrongStatusException;
 
 /**
  * Class WrongStatusException
  *
- * @package PagaMasTarde\ModuleUtils\Exception
+ * @package Pagantis\ModuleUtils\Exception
  */
 class WrongStatusExceptionTest extends AbstractExceptionTest
 {

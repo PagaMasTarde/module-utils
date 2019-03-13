@@ -1,10 +1,10 @@
 <?php
 
-namespace PagaMasTarde\ModuleUtils\Model\Response;
+namespace Pagantis\ModuleUtils\Model\Response;
 
 /**
  * Class JsonSuccessResponse
- * @package PagaMasTarde\ModuleUtils\Model
+ * @package Pagantis\ModuleUtils\Model
  */
 class JsonSuccessResponse extends AbstractJsonResponse
 {

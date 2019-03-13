@@ -1,11 +1,11 @@
 <?php
 
-namespace PagaMasTarde\ModuleUtils\Exception;
+namespace Pagantis\ModuleUtils\Exception;
 
 /**
  * Class AbstractStep
  *
- * @package PagaMasTarde\SeleniumFormUtils\Step
+ * @package Pagantis\SeleniumFormUtils\Step
  */
 abstract class AbstractException extends \Exception
 {
