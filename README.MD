@@ -15,8 +15,6 @@ Install the library by:
 
 - Downloading it from [here](https://github.com/pagantis/module-utils/releases/latest)
 
-https://github.com/pagantis/module-utils/releases/latest
-
 - Using Composer:
 ```php
 composer require pagantis/module-utils
