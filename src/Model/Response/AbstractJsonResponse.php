@@ -8,7 +8,7 @@ use Nayjest\StrCaseConverter\Str;
  * Class AbstractJsonResponse
  * @package Pagantis\ModuleUtils\Model\Response
  */
-abstract class AbstractJsonResponse implements \JsonSerializable
+abstract class AbstractJsonResponse
 {
     /**
      * @var int $timestamp
