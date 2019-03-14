@@ -12,7 +12,7 @@ class NoIdentificationException extends AbstractException
     /**
      * ERROR_MESSAGE
      */
-    const ERROR_MESSAGE = 'We can not get the PagaMasTarde identification in database';
+    const ERROR_MESSAGE = 'We can not get the Pagantis identification in database';
 
     /**
      * ERROR_CODE

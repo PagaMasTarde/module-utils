@@ -21,9 +21,9 @@ abstract class AbstractJsonResponse
     protected $merchantOrderId;
 
     /**
-     * @var string $pmtOrderId
+     * @var string $pagantisOrderId
      */
-    protected $pmtOrderId;
+    protected $pagantisOrderId;
 
     /**
      * @var int $statusCode
@@ -109,17 +109,17 @@ abstract class AbstractJsonResponse
     /**
      * @return string
      */
-    public function getPmtOrderId()
+    public function getPagantisOrderId()
     {
-        return $this->pmtOrderId;
+        return $this->pagantisOrderId;
     }
 
     /**
-     * @param string $pmtOrderId
+     * @param string $pagantisOrderId
      */
-    public function setPmtOrderId($pmtOrderId)
+    public function setPagantisOrderId($pagantisOrderId)
     {
-        $this->pmtOrderId = $pmtOrderId;
+        $this->pagantisOrderId = $pagantisOrderId;
     }
 
     /**
