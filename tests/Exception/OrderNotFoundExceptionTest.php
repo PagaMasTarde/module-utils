@@ -14,7 +14,7 @@ class OrderNotFoundExceptionTest extends AbstractExceptionTest
     /**
      * ERROR_MESSAGE
      */
-    const ERROR_MESSAGE = 'Unable to get the order in Paga+Tarde';
+    const ERROR_MESSAGE = 'Unable to get the order in Pagantis';
 
     /**
      * ERROR_CODE
